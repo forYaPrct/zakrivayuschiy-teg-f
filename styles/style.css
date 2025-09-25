@@ -14,8 +14,8 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   background-image: var(--page-background);
-  background-position: center; 
-  background-attachment: fixed; 
+  background-position: center;
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -58,8 +58,8 @@
 }
 
 .card-title {
-  font-weight: var(--card-title-font-weight);
-  font-size: var(--card-title-font-weight);
+  font-variation-settings: var(--card-title-weight);
+  font-size: var(--card-title-font-size);
   padding: 4px 10px;
   border: var(--border);
 }
@@ -168,7 +168,6 @@
   position: fixed;
   inset: 0;
   border: var(--border);
-  inset: 0;
 }
 
 .popup[open]::backdrop {
