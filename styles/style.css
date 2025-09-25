@@ -13,4 +13,325 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--page-background);
+  background-position: center; 
+  background-attachment: fixed; 
+  background-size: cover;
+}
+
+.width-align {
+  margin: 0 auto;
+  width: var(--content-width);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--content-background-color);
+  border: var(--border);
+  margin-bottom: 100px;
+  font-family: var(--accent-font);
+  padding: clamp(122px, 119.18px + 0.75vw, 130px) 0;
+}
+
+.main-title {
+  text-transform: uppercase;
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+}
+
+.main-subtitle {
+  text-transform: uppercase;
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  width: var(--content-width);
+  background-color: var(--content-background-color);
+}
+
+.card-title {
+  font-weight: var(--card-title-font-weight);
+  font-size: var(--card-title-font-weight);
+  padding: 4px 10px;
+  border: var(--border);
+}
+
+.image-area {
+  position: relative;
+  inset: 0;
+  border-left: var(--border);
+  border-right: var(--border);
+  font-size: 0;;
+}
+
+.card-image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.label {
+  text-transform: uppercase;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  mix-blend-mode: hard-light;
+  text-shadow: -1px 0 var(--content-background-color),
+  0 1px var(--content-background-color),
+  1px 0 var(--content-background-color),
+  0 -1px var(--content-background-color);
+  opacity: 50%;
+}
+
+@supports((text-stroke: 1px var(--content-background-color)) or (-webkit-text-stroke: 1px var(--content-background-color))) {
+  .label {
+    -webkit-text-stroke: 1px var(--content-background-color);
+    text-stroke: 1px var(--content-background-color);
+    text-shadow: none;
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+  border: var(--border);
+}
+
+.card-text {
+  font-size: 18px;
+}
+
+.like-buttons {
+  align-self: end;
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.card__icon-button {
+  width: 39px;
+  height: 36px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+}
+
+.button__text {
+  position: relative;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 90%;
+  z-index: 10;
+  color: var(--animated-text-color);
+  mix-blend-mode: difference;
+}
+
+.save-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 17px 20px;
+  margin: 50px auto;
+}
+
+.floppy-icon {
+  width: 21px;
+}
+
+.popup[open] {
+  display: flex;
+  flex-direction: column;
+  width: 353px;
+  gap: 30px;
+  padding: 30px;
+  position: fixed;
+  inset: 0;
+  border: var(--border);
+  inset: 0;
+}
+
+.popup[open]::backdrop {
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 0.75;
+}
+
+.dialog-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog-floppy-icon {
+  width: 39px;
+}
+
+.dialog-title {
+  text-transform: uppercase;
+  line-height: 150%;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  max-width: 200px;
+}
+
+.dialog-ok-button {
+  width: 100%;
+  height: 38px;
+}
+
+.button-decor {
+  position: relative;
+  border: var(--border);
+  background-color: var(--content-background-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.button-decor::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s ease-in-out;
+  background-color: var(--accent-color);
+  transform-origin: 0 0;
+  transform: scaleX(0);
+}
+
+.button-decor:focus {
+  outline: none;
+  box-shadow: 2px 2px var(--accent-color);
+}
+
+.button-decor:focus::after {
+  transform: scaleX(1);
+}
+
+/* Filters */
+
+.card-image-0 {
+  filter: blur(2px) brightness(135%);
+}
+
+.card-image-1 {
+  filter: sepia(0.4);
+}
+
+.card-image-2 {
+  filter: hue-rotate(0.4turn);
+}
+
+.card-image-3 {
+  filter: saturate(150%);
+}
+
+.card-image-4 {
+  filter: contrast(60%);
+}
+
+.card-image-5 {
+  filter: brightness(50%);
+}
+
+.card-image-6 {
+  filter: grayscale(70%);
+}
+
+.card-image-7 {
+  filter: opacity(80%);
+}
+
+
+/* Heart animation */
+
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--accent-color);
+  transition-delay: 0s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition-delay: 0.06s;
+}
+
+.heart {
+  transform-origin: center;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale 0.3s ease-in 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: opacity 0.3s ease-in 0.3s;
+}
+
+
+@media (width <= 375px) {
+  .popup[open] {
+    padding: 30px 40px;
+    max-width: 341px;
+  }
+
+  .save-button {
+    flex-direction: column;
+  }
 }

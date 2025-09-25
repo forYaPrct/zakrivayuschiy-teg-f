@@ -9,7 +9,14 @@
 }
 
 body {
-  margin: 0;
+  min-inline-size: 375px; 
+  max-inline-size: 700px;
+  margin: 100px auto;
+}
+
+.page {
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings:var(--card-text-weight);
 }
 
 h1,
